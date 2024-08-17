@@ -5,6 +5,7 @@ import random
 p = Serial(devfile='/dev/ttyS3')
 
 def line(s):
+    p.set(double_height=True, double_width=True)
     print(s)
     p.text(f'{s}\n')
     sleep(0.1)
@@ -12,7 +13,6 @@ def line(s):
 def small_line():
     p.set_with_default()
     line('')
-    p.set(double_height=True, double_width=True)
 
 orderno=1
 t=1
@@ -37,12 +37,10 @@ def order(n):
         line('  The Tasty Way')
         small_line()
     orderno+=1
-
-#p.set(font='b')
-p.set(double_height=True, double_width=True)
-
-order(3)
+    p.cut()
 
 
+while True:
+    order(random.randrange(1,8))
+#    sleep(random.randrange(0, 3))
 
-p.cut()
