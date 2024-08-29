@@ -33,14 +33,20 @@ def order(n):
     line( '       -- FIRE --       ')
     small_line()
     for i in range(n):
-        line('1 EGG CHEESE OMELETE')
-        line('  The Tasty Way')
+#        line('1 EGG CHEESE OMELETE')
+#        line('  The Tasty Way')
+        p.set(align='center')
+        line('WRITTEN AND DIRECTED BY')
+        line('DOUG LOWELL')
         small_line()
+        for j in range(4):
+            line('')
     orderno+=1
     p.cut()
 
 
-while True:
-    order(random.randrange(1,8))
+#while True:
+#order(random.randrange(1,8))
+order(1)
 #    sleep(random.randrange(0, 3))
 
